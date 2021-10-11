@@ -9,7 +9,7 @@ jobs:
       - run: echo "github.ref {{ github.ref }}"
       - run: echo "github.repository {{ github.repository }}"
       - name: Check the repository code
-        uses: actions/checkout@2
+        uses: actions/checkout@v2
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
