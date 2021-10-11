@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "github.event_name ${{ github.event_name }}"
-      - run: echo "runners.os ${{ runners.os }}"
+      - run: echo "runners.os ${{ runner.os }}"
       - run: echo "github.ref ${{ github.ref }}"
       - run: echo "github.repository ${{ github.repository }}"
       - name: Check the repository code
