@@ -4,14 +4,14 @@ jobs:
   Explore-GitHub_actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "github.event_name {{ github.event_name }}"
-      - run: echo "runners.os {{ runners.os }}"
-      - run: echo "github.ref {{ github.ref }}"
-      - run: echo "github.repository {{ github.repository }}"
+      - run: echo "github.event_name ${{ github.event_name }}"
+      - run: echo "runners.os ${{ runners.os }}"
+      - run: echo "github.ref ${{ github.ref }}"
+      - run: echo "github.repository ${{ github.repository }}"
       - name: Check the repository code
         uses: actions/checkout@v2
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "{{ job.status }}"
+      - run: echo "job.status ${{ job.status }}"
