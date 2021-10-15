@@ -1,0 +1,29 @@
+name: goreleaser
+
+on:
+  workflow_dispatch:
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.2'
+
+      - name: Make All
+        run: |
+          go version
+          go env
+          cat $GOROOT/src/runtime/internal/sys/zversion.go
+          cat $GOROOT/VERSION
+          ls -l /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
+          md5sum /opt/hostedtoolcache/go/1.16.2/x64/pkg/tool/linux_amd64/compile
+          ./package.sh
+          
