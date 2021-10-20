@@ -1,0 +1,19 @@
+name: setup-go-action-test-1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-go-action-test-1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [ '1.17', '1.16', '1.14.0-rc1']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      - name: Make All
+        run: |
+          go version
+          go env GOROOT GOVERSION
+          
