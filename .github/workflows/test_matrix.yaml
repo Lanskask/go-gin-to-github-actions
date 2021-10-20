@@ -1,3 +1,5 @@
+name: Go version matrix test
+
 on:
   workflow_dispatch:
 
