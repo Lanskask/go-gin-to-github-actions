@@ -7,8 +7,8 @@ jobs:
     name: GoTest
     runs-on: [self-hosted, linux]
     steps:
-      - name: Clean root
-        uses: AutoModality/action-clean@v1
+#      - name: Clean root
+#        uses: AutoModality/action-clean@v1
       - name: Checkout
         uses: actions/setup-go@v2
         with:
