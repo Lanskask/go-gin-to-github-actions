@@ -1,11 +1,16 @@
+name: Self Hosted Tries
+
+on: workflow_dispatch
+
 jobs:
   gotest:
     name: GoTest
     runs-on: [self-hosted, linux]
     steps:
-      - uses: AutoModality/action-clean@v1
+      - name: Clean root
+        uses: AutoModality/action-clean@v1
       - name: Checkout
-      - uses: actions/setup-go@v2
+        uses: actions/setup-go@v2
         with:
           go-version: '1.14.*'
       - name: Go Env
