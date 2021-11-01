@@ -1,5 +1,7 @@
 name: Self Hosted Tries
 
+on: workflow_dispatch
+
 jobs:
   gotest:
     name: GoTest
