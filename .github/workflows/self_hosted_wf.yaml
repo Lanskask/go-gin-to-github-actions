@@ -5,7 +5,8 @@ on: workflow_dispatch
 jobs:
   gotest:
     name: GoTest
-    runs-on: [self-hosted, linux]
+#    runs-on: [self-hosted, linux]
+    runs-on: self-hosted
     steps:
 #      - name: Clean root
 #        uses: AutoModality/action-clean@v1
