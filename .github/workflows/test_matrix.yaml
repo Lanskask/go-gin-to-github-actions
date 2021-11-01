@@ -1,0 +1,19 @@
+name: Go version matrix test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-go-action-test-1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [ '1.17', '1.16', '1.14.0-rc1']
+    name: What's go ${{ matrix.go }} version
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with: 
+          go-version: ${{ matrix.go }}
+      - run: go version
+     
